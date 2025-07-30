@@ -22,7 +22,7 @@ async def handle_yt_link(client, message):
         InlineKeyboardButton("🎥 Download MP4", callback_data=f"mp4|{url}")
     ]])
     await message.reply("Choose format:", reply_markup=keyboard)
-  @app.on_callback_query()
+@app.on_callback_query()
 async def callback(client, callback_query):
     format_type, url = callback_query.data.split("|", 1)
     msg = await callback_query.message.reply("⏬ Downloading...")
